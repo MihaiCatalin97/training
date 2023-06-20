@@ -10,6 +10,13 @@ public abstract class AbstractProduct {
 
     protected int quantity;
 
+    public AbstractProduct(String name, String id, double price, int quantity) {
+        this.name = name;
+        this.id = id;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
     public abstract void display();
 
     public void inventoryStatus() {
