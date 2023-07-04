@@ -11,7 +11,7 @@ jobs:
         with:
           java-version: '8'
           distribution: 'temurin'
-      - run: mvn --batch-mode --update-snapshots verify
+      - run: mvn clean install
       - run: mkdir staging && cp orders/target/*.jar staging
       - uses: actions/upload-artifact@v3
         with:
