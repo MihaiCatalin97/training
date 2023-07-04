@@ -22,10 +22,10 @@ jobs:
         with:
           name: inventory
           path: staging
-      - name: Run Coverage
-        run: |
-          chmod +x gradlew
-          ./gradlew testCoverage
+      - name: Generate JaCoCo Badge
+        uses: cicirello/jacoco-badge-generator@v2
+        with:
+          generate-branches-badge: true
 
       - name: Add coverage to PR
         id: jacoco
