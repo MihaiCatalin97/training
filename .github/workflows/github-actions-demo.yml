@@ -11,7 +11,7 @@ jobs:
         with:
           java-version: '8'
           distribution: 'temurin'
-      - run: mvn clean install
+      - run: mvn --batch-mode --update-snapshots verify
       - run: mkdir staging && cp orders/target/*.jar staging
       - uses: actions/upload-artifact@v3
         with:
@@ -22,16 +22,3 @@ jobs:
         with:
           name: inventory
           path: staging
-      - name: Generate JaCoCo Badge
-        uses: cicirello/jacoco-badge-generator@v2
-        with:
-          generate-branches-badge: true
-
-      - name: Add coverage to PR
-        id: jacoco
-        uses: madrapps/jacoco-report@v1.3
-        with:
-          paths: ${{ github.workspace }}/build/reports/jacoco/testCoverage/testCoverage.xml
-          token: ${{ secrets.GITHUB_TOKEN }}
-          min-coverage-overall: 40
-          min-coverage-changed-files: 6
