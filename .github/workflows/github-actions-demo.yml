@@ -11,16 +11,7 @@ jobs:
         with:
           java-version: '8'
           distribution: 'temurin'
-      - run: mvn clean install
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-java@v3
-        with:
-          java-version: '8'
-          distribution: 'temurin'
-      - run: mvn clean install -DskipTests
+      - run: mvn install
       - run: mkdir staging && cp orders/target/*.jar staging
       - uses: actions/upload-artifact@v3
         with:
