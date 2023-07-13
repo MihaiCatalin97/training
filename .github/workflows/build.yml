@@ -12,3 +12,8 @@ jobs:
           java-version: '8'
           distribution: 'temurin'
       - run:  mvn install
+      - run: mkdir staging && cp gateway/target/*.jar staging
+      - uses: actions/upload-artifact@v3
+        with:
+          name: gateway
+          path: staging
