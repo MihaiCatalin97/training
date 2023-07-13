@@ -19,4 +19,15 @@ public class Electronics extends AbstractProduct implements Sellable{
 			this.quantity -= quantity;
 		}
 	}
+
+	@Override
+	public String toString() {
+		return "Electronics{" +
+				"type='" + type + '\'' +
+				", name='" + name + '\'' +
+				", id='" + id + '\'' +
+				", price=" + price +
+				", quantity=" + quantity +
+				'}';
+	}
 }
