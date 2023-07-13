@@ -2,9 +2,9 @@ package service;
 
 public interface Service<T> {
 
-    T create(T t);
+	T create(T t);
 
-    T get(int id) throws Exception;
+	T get(int id) throws Exception;
 
-    boolean delete(int id);
+	boolean delete(int id);
 }
