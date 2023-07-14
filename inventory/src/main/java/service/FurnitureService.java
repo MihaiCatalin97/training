@@ -1,8 +1,11 @@
 package service;
 
 import database.InventoryDatabase;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 import products.Furniture;
 
+@Component
 public class FurnitureService implements Service<Furniture> {
 
     private InventoryDatabase inventoryDatabase;

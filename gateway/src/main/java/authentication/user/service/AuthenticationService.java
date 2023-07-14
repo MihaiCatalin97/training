@@ -3,6 +3,7 @@ package authentication.user.service;
 import authentication.user.database.UserDatabase;
 import authentication.user.domain.User;
 import authentication.user.exceptions.UserAlreadyExistsException;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class AuthenticationService {
 
@@ -32,4 +33,5 @@ public class AuthenticationService {
         }
         userDatabase.addUser(new User(username, password));
     }
+
 }

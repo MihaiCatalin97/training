@@ -6,10 +6,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import orders.domain.Order;
+import org.springframework.stereotype.Component;
 import products.Electronics;
 import products.Furniture;
 
-
+@Component
 public class OrderDatabase {
 
 	private List<Order> orders;

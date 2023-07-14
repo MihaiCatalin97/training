@@ -1,5 +1,7 @@
 import orders.database.OrderDatabase;
 import orders.domain.Order;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import products.Electronics;
 import products.Furniture;
 import orders.service.OrderService;
@@ -9,8 +11,9 @@ import java.util.Arrays;
 public class Main {
 	public static void main(String[] args) {
 
-		OrderDatabase orderDatabase = new OrderDatabase();
-		OrderService orderService = new OrderService(orderDatabase);
+		ApplicationContext context = new ClassPathXmlApplicationContext("orders-beans.xml");
+
+		OrderService orderService = (OrderService) context.getBean("my-service");
 
 		orderService.create(new Order("5",
 				"Ionel Popovici",

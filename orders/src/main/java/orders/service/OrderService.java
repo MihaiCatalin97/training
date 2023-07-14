@@ -2,11 +2,12 @@ package orders.service;
 
 import orders.database.OrderDatabase;
 import orders.domain.Order;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-
+@Component("my-service")
 public class OrderService {
 
     private OrderDatabase orderDatabase;
