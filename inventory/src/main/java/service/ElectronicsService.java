@@ -1,8 +1,12 @@
 package service;
 
 import database.InventoryDatabase;
+import org.springframework.context.annotation.DependsOn;
+import org.springframework.stereotype.Component;
 import products.Electronics;
 
+@Component
+@DependsOn("my-inventory")
 public class ElectronicsService implements Service<Electronics> {
 
     private InventoryDatabase inventoryDatabase;

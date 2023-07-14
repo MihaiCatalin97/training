@@ -22,4 +22,15 @@ public class Furniture extends AbstractProduct implements Sellable{
 
 		price += 10;
 	}
+
+	@Override
+	public String toString() {
+		return "Furniture{" +
+				"color='" + color + '\'' +
+				", name='" + name + '\'' +
+				", id='" + id + '\'' +
+				", price=" + price +
+				", quantity=" + quantity +
+				'}';
+	}
 }
